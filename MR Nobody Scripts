@@ -1,0 +1,198 @@
+TSB 1 
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/InstantLethal/refs/heads/main/Protected_5983112998592296.lua"))()
+
+TSB 2 
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+local TweenService    = game:GetService("TweenService")
+local UserInputService= game:GetService("UserInputService")
+local RunService      = game:GetService("RunService")
+local player          = game.Players.LocalPlayer
+local playerGui       = player:WaitForChild("PlayerGui")
+
+-- 1) Splash Animation
+local splashGui = Instance.new("ScreenGui", playerGui)
+splashGui.Name = "SplashGui"
+local splashFrame = Instance.new("Frame", splashGui)
+splashFrame.Size = UDim2.new(1,0,1,0)
+splashFrame.BackgroundColor3 = Color3.fromRGB(20,20,20)
+local splashText = Instance.new("TextLabel", splashFrame)
+splashText.Size = UDim2.new(1,0,0,100)
+splashText.Position = UDim2.new(0,0,0.5,-50)
+splashText.BackgroundTransparency = 1
+splashText.Text = "MADE BY DARKDEX X CYBORG"
+splashText.Font = Enum.Font.GothamBold
+splashText.TextScaled = true
+splashText.TextColor3 = Color3.fromRGB(255,215,0)
+splashText.TextStrokeTransparency = 0
+splashText.TextStrokeColor3 = Color3.new(0,0,0)
+splashText.TextTransparency = 1
+TweenService:Create(splashText, TweenInfo.new(0.8), {TextTransparency = 0}):Play()
+task.wait(2)
+TweenService:Create(splashText, TweenInfo.new(0.8), {TextTransparency = 1}):Play()
+task.wait(0.8)
+splashGui:Destroy()
+
+-- 2) Main GUI
+local gui = Instance.new("ScreenGui", playerGui)
+gui.Name = "OreoDarkGui"
+gui.Enabled = true
+
+local mainFrame = Instance.new("Frame", gui)
+mainFrame.Size = UDim2.new(0,300,0,150)
+mainFrame.Position = UDim2.new(0.5,0,0.5,0)
+mainFrame.AnchorPoint = Vector2.new(0.5,0.5)
+mainFrame.BackgroundColor3 = Color3.fromRGB(30,30,35)
+Instance.new("UICorner", mainFrame).CornerRadius = UDim.new(0,12)
+
+-- Shadow
+local shadow = Instance.new("ImageLabel", mainFrame)
+shadow.Size = UDim2.new(1,20,1,20)
+shadow.Position = UDim2.new(0,-10,0,-10)
+shadow.BackgroundTransparency = 1
+shadow.Image = "rbxassetid://1316045217"
+shadow.ImageColor3 = Color3.new(0,0,0)
+shadow.ImageTransparency = 0.85
+shadow.ScaleType = Enum.ScaleType.Slice
+shadow.SliceCenter = Rect.new(10,10,118,118)
+
+-- Close Button
+local closeBtn = Instance.new("TextButton", mainFrame)
+closeBtn.Size = UDim2.new(0,30,0,30)
+closeBtn.Position = UDim2.new(1,-35,0,5)
+closeBtn.Text = "X"
+closeBtn.Font = Enum.Font.GothamBold
+closeBtn.TextSize = 20
+closeBtn.TextColor3 = Color3.new(1,1,1)
+closeBtn.BackgroundColor3 = Color3.fromRGB(255,50,50)
+Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(0,6)
+closeBtn.MouseEnter:Connect(function()
+    TweenService:Create(closeBtn, TweenInfo.new(0.2), {BackgroundColor3=Color3.fromRGB(255,30,30)}):Play()
+end)
+closeBtn.MouseLeave:Connect(function()
+    TweenService:Create(closeBtn, TweenInfo.new(0.2), {BackgroundColor3=Color3.fromRGB(255,50,50)}):Play()
+end)
+
+-- Reopen Button
+local reopenBtn = Instance.new("TextButton", playerGui)
+reopenBtn.Size = UDim2.new(0,40,0,40)
+reopenBtn.Position = UDim2.new(1,-50,1,-80)
+reopenBtn.AnchorPoint = Vector2.new(0,0)
+reopenBtn.Text = "➕"
+reopenBtn.Font = Enum.Font.GothamBold
+reopenBtn.TextSize = 24
+reopenBtn.TextColor3 = Color3.new(1,1,1)
+reopenBtn.BackgroundColor3 = Color3.fromRGB(85,60,180)
+Instance.new("UICorner", reopenBtn).CornerRadius = UDim.new(0,6)
+reopenBtn.Visible = false
+reopenBtn.MouseEnter:Connect(function()
+    TweenService:Create(reopenBtn, TweenInfo.new(0.2), {BackgroundColor3=Color3.fromRGB(120,90,220)}):Play()
+end)
+reopenBtn.MouseLeave:Connect(function()
+    TweenService:Create(reopenBtn, TweenInfo.new(0.2), {BackgroundColor3=Color3.fromRGB(85,60,180)}):Play()
+end)
+
+closeBtn.MouseButton1Click:Connect(function()
+    gui.Enabled = false
+    reopenBtn.Visible = true
+end)
+reopenBtn.MouseButton1Click:Connect(function()
+    gui.Enabled = true
+    reopenBtn.Visible = false
+end)
+
+-- Title
+local title = Instance.new("TextLabel", mainFrame)
+title.Size = UDim2.new(1,0,0,40)
+title.Position = UDim2.new(0,0,0,5)
+title.BackgroundTransparency = 1
+title.Font = Enum.Font.GothamBold
+title.Text = "OREO DARK"
+title.TextColor3 = Color3.fromRGB(255,215,0)
+title.TextSize = 24
+
+-- Centered Button
+local btn = Instance.new("TextButton", mainFrame)
+btn.Size = UDim2.new(0,150,0,40)
+btn.Position = UDim2.new(0.5,0,0.5,0)
+btn.AnchorPoint = Vector2.new(0.5,0.5)
+btn.Text = "Oreo Tech"
+btn.Font = Enum.Font.GothamBold
+btn.TextSize = 22
+btn.TextColor3 = Color3.new(1,1,1)
+btn.BackgroundColor3 = Color3.fromRGB(85,60,180)
+Instance.new("UICorner", btn).CornerRadius = UDim.new(0,8)
+btn.MouseEnter:Connect(function()
+    TweenService:Create(btn, TweenInfo.new(0.2), {BackgroundColor3=Color3.fromRGB(120,90,220)}):Play()
+end)
+btn.MouseLeave:Connect(function()
+    TweenService:Create(btn, TweenInfo.new(0.2), {BackgroundColor3=Color3.fromRGB(85,60,180)}):Play()
+end)
+
+-- Record existing GUIs
+local pre = {}
+for _, g in pairs(playerGui:GetChildren()) do pre[g] = true end
+
+-- Button action
+btn.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/OreoTech/refs/heads/main/Protected_6856895483929371.lua"))()
+    task.wait(1)
+    for _, g in pairs(playerGui:GetChildren()) do
+        if not pre[g] and g:IsA("ScreenGui") then
+            for _, obj in pairs(g:GetDescendants()) do
+                if obj:IsA("TextButton") then
+                    local c = obj.BackgroundColor3
+                    if c == Color3.fromRGB(0,114,255) then
+                        obj.BackgroundColor3 = Color3.new(0,0,0)
+                    end
+                end
+            end
+        end
+    end
+end)
+
+-- Drag functionality
+local dragging, dragInput, dragStart, startPos
+mainFrame.InputBegan:Connect(function(i)
+    if i.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = i.Position
+        startPos = mainFrame.Position
+        i.Changed:Connect(function()
+            if i.UserInputState == Enum.UserInputState.End then dragging = false end
+        end)
+    end
+end)
+mainFrame.InputChanged:Connect(function(i)
+    if i.UserInputType == Enum.UserInputType.MouseMovement then dragInput = i end
+end)
+UserInputService.InputChanged:Connect(function(i)
+    if i == dragInput and dragging then
+        local delta = i.Position - dragStart
+        mainFrame.Position = UDim2.new(
+            startPos.X.Scale, startPos.X.Offset + delta.X,
+            startPos.Y.Scale, startPos.Y.Offset + delta.Y
+        )
+    end
+end)
+
+
+
+infi script 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+
+
+Rivals script 
+loadstring(game:HttpGet("https://rawscripts.net/raw/RIVALS-soluna-rework-220663"))()
+
+
+Brookheven script
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kigredns/testUIDK/refs/heads/main/panel.lua"))()
+
+TSB Hack
+loadstring(game:HttpGet("http://f-hoster.up.railway.app/raw/TSB-autofarm.lua"))()
+
