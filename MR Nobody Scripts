@@ -196,3 +196,5 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/kigredns/testUIDK/ref
 TSB Hack
 loadstring(game:HttpGet("http://f-hoster.up.railway.app/raw/TSB-autofarm.lua"))()
 
+Tha Bronx script
+loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/345085d39c81481244b8678a3756ae47696a06e98dab62bbbef85fe9a2bf73fd/download"))()
