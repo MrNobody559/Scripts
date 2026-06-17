@@ -202,3 +202,6 @@ loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/345085d3
 ink games script
 YOUR_KEY="AX-PUBLIC-006b146a-f1cb-4e3c-a93d-86869d165657";
 loadstring(game:HttpGet("https://officialaxscripts.vercel.app/scripts/AX-Loader.lua"))()
+
+mm2 script
+loadstring(game:HttpGet("https://kroxn.github.io/mm2/i.lua"))()
