@@ -205,3 +205,6 @@ loadstring(game:HttpGet("https://officialaxscripts.vercel.app/scripts/AX-Loader.
 
 mm2 script
 loadstring(game:HttpGet("https://kroxn.github.io/mm2/i.lua"))()
+
+Brookheven Script 2 OP
+loadstring(game:HttpGet("https://raw.githubusercontent.com/as6cd0/SP_Hub/refs/heads/main/Brookhaven"))()
